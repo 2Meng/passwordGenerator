@@ -73,8 +73,10 @@ function writePassword() {
     );
     if (passwordLength < 8 || passwordLength > 28) {
       alert("Your password length must be greater than 8 and less than 28!");
+      return null;
     } else if (isNaN(passwordLength)) {
       alert("Please use a number to indicate the length of the password!");
+      return null;
     }
 
     // Prompts the user which characters they would like to use.
@@ -146,7 +148,7 @@ function writePassword() {
       returnPassword.push(randomizePassword(specialCharacters));
     }
 
-    for (let i = 0; i < passwordPrompts.length; i++) {
+    for (let i = 0; i < passwordPrompts.passwordLength; i++) {
       let randomCharacters = randomizePassword(passwordCharacters);
       userPassword.push(randomCharacters);
     }
